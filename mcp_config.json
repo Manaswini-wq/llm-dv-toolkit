@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "dv-verification-toolkit": {
+      "command": "python",
+      "args": ["-m", "llm_dv_toolkit.mcp_server.server"],
+      "env": {
+        "DV_PROJECT_ROOT": "${workspaceFolder}",
+        "COVERAGE_DB": "${workspaceFolder}/coverage.db",
+        "REGRESSION_DIR": "${workspaceFolder}/regression_results"
+      }
+    }
+  }
+}

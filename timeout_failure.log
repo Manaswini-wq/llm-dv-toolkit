@@ -1,0 +1,33 @@
+Chronologic VCS (TM) Version S-2021.09-SP2-11 -- Wed Jan 15 10:45:22 2025
+Copyright (c) 1991-2021 by Synopsys Inc.
+
+UVM_INFO @ 0ns: reporter [RNTST] Running test axi4_lite_stress_test...
+UVM_INFO @ 0ns: uvm_test_top [TEST] Starting stress test with seed 0x55AA00FF
+UVM_INFO @ 100ns: uvm_test_top.env.agent.driver [DRIVER] Reset complete, driving transactions
+UVM_INFO @ 200ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x00 data=0x00000001 strb=4'hF
+UVM_INFO @ 250ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 500ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x20 data=0x80000000 strb=4'hF
+UVM_INFO @ 550ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 600ns: uvm_test_top.env.scoreboard [SCB] PASS: 2 transactions verified
+UVM_INFO @ 1000ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x24 data=0x00001000 strb=4'hF
+UVM_INFO @ 1050ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 2000ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x20 data=0x80000001 strb=4'hF
+UVM_INFO @ 2050ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 2100ns: uvm_test_top.env.agent.driver [DRIVER] DMA transfer initiated, waiting for completion
+UVM_INFO @ 5000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_INFO @ 10000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_INFO @ 50000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_INFO @ 100000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_INFO @ 500000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_INFO @ 999000ns: uvm_test_top.env.agent.driver [DRIVER] Still waiting for DMA done interrupt...
+UVM_FATAL @ 1000000ns: uvm_test_top.env.agent.driver [DRIVER] TIMEOUT waiting for DMA completion interrupt after 1000000ns. Last known state: DMA engine active, transfer_count=0/4096, no progress detected.
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   20
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+
+Simulation terminated via UVM_FATAL at time 1000000 NS + 0

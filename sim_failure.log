@@ -1,0 +1,72 @@
+Chronologic VCS (TM) Version S-2021.09-SP2-11 -- Wed Jan 15 09:23:14 2025
+Copyright (c) 1991-2021 by Synopsys Inc.
+                    Chronologic Simulation VCS Feature Summary
+
+Compiler version S-2021.09-SP2-11; Runtime version S-2021.09-SP2-11;
+Design compiled with '-debug_access+all -timescale=1ns/1ps'
+Includes: /tools/synopsys/vcs/include/uvm-1.2
+
+UVM_INFO @ 0ns: reporter [RNTST] Running test axi4_lite_reg_access_test...
+UVM_INFO @ 0ns: reporter [UVM/TOPOLOGY]
+-------------------------------------------------------------
+Name                          Type                    Size
+-------------------------------------------------------------
+uvm_test_top                  axi4_lite_reg_test      -
+  env                         axi4_lite_env           -
+    agent                     axi4_lite_agent         -
+      driver                  axi4_lite_driver        -
+      monitor                 axi4_lite_monitor       -
+      sequencer               axi4_lite_sequencer     -
+    scoreboard                axi4_lite_scoreboard    -
+    coverage                  axi4_lite_coverage      -
+-------------------------------------------------------------
+
+UVM_INFO @ 0ns: uvm_test_top [TEST] Starting register access test with seed 0xA3B7C901
+UVM_INFO @ 100ns: uvm_test_top.env.agent.driver [DRIVER] Reset complete, driving transactions
+UVM_INFO @ 200ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x00 data=0xDEADBEEF strb=4'hF
+UVM_INFO @ 250ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 300ns: uvm_test_top.env.agent.monitor [MON] AXI Read: addr=0x00
+UVM_INFO @ 350ns: uvm_test_top.env.agent.monitor [MON] Read Data: 0xDEADBEEF resp=OKAY
+UVM_INFO @ 400ns: uvm_test_top.env.scoreboard [SCB] PASS: addr=0x00 exp=0xDEADBEEF act=0xDEADBEEF
+UVM_INFO @ 500ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x04 data=0xA5A5A5A5 strb=4'hF
+UVM_INFO @ 550ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 600ns: uvm_test_top.env.agent.monitor [MON] AXI Read: addr=0x04
+UVM_INFO @ 650ns: uvm_test_top.env.agent.monitor [MON] Read Data: 0xA5A50000 resp=OKAY
+UVM_INFO @ 700ns: uvm_test_top.env.scoreboard [SCB] Comparing transaction at addr=0x04
+UVM_ERROR @ 700ns: uvm_test_top.env.scoreboard [SCB] DATA MISMATCH addr=0x04 expected=0xA5A5A5A5 actual=0xA5A50000. Byte lanes [1:0] appear stuck at zero.
+UVM_INFO @ 800ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x08 data=0x12345678 strb=4'hF
+UVM_INFO @ 850ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 900ns: uvm_test_top.env.agent.monitor [MON] AXI Read: addr=0x08
+UVM_INFO @ 950ns: uvm_test_top.env.agent.monitor [MON] Read Data: 0x12345678 resp=OKAY
+UVM_INFO @ 1000ns: uvm_test_top.env.scoreboard [SCB] PASS: addr=0x08 exp=0x12345678 act=0x12345678
+UVM_INFO @ 3000ns: uvm_test_top.env.agent.driver [DRIVER] Driving write to addr=0x04 data=0xFFFF0000
+UVM_INFO @ 3050ns: uvm_test_top.env.agent.monitor [MON] Write Response: OKAY
+UVM_INFO @ 3100ns: uvm_test_top.env.agent.monitor [MON] AXI Read: addr=0x04
+UVM_INFO @ 3150ns: uvm_test_top.env.agent.monitor [MON] Read Data: 0xFFFF0000 resp=OKAY
+UVM_INFO @ 4000ns: uvm_test_top.env.agent.driver [DRIVER] Starting protocol stress phase
+UVM_INFO @ 4200ns: uvm_test_top.env.agent.monitor [MON] AXI Write: addr=0x10 data=0xCAFEBABE strb=4'hF
+UVM_INFO @ 4300ns: uvm_test_top.env.agent.monitor [MON] WVALID asserted, waiting for WREADY
+UVM_INFO @ 4400ns: uvm_test_top.env.agent.monitor [MON] WREADY received after 2 cycle delay
+UVM_INFO @ 4500ns: uvm_test_top.env.agent.monitor [MON] WVALID deasserted before BVALID
+Assertion error: a_wvalid_stable at time 4520ns in module tb_top.dut.axi_slave: WVALID must remain asserted until WREADY is received. Observed WVALID deassert while WREADY=0.
+UVM_INFO @ 5000ns: uvm_test_top.env [ENV] End of test phase reached
+UVM_INFO @ 5000ns: reporter [UVM/REPORT/SERVER]
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   32
+UVM_WARNING :    0
+UVM_ERROR :    1
+UVM_FATAL :    0
+
+** Report counts by id
+[DRIVER]     4
+[MON]       18
+[SCB]        5
+[TEST]       2
+[ENV]        1
+[UVM/TOPOLOGY]  1
+[RNTST]      1
+
+Simulation complete via $finish(2) at time 5000 NS + 0
